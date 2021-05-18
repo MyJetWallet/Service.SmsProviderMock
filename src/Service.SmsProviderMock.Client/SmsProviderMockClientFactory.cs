@@ -5,16 +5,16 @@ using Grpc.Net.Client;
 using JetBrains.Annotations;
 using MyJetWallet.Sdk.GrpcMetrics;
 using ProtoBuf.Grpc.Client;
-using Service.Service.SmsProviderMock.Grpc;
+using Service.SmsProviderMock.Grpc;
 
-namespace Service.Service.SmsProviderMock.Client
+namespace Service.SmsProviderMock.Client
 {
     [UsedImplicitly]
-    public class Service.SmsProviderMockClientFactory
+    public class SmsProviderMockClientFactory
     {
         private readonly CallInvoker _channel;
 
-        public Service.SmsProviderMockClientFactory(string assetsDictionaryGrpcServiceUrl)
+        public SmsProviderMockClientFactory(string assetsDictionaryGrpcServiceUrl)
         {
             AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
             var channel = GrpcChannel.ForAddress(assetsDictionaryGrpcServiceUrl);

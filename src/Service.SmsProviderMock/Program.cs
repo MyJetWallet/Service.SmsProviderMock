@@ -10,7 +10,7 @@ using MyJetWallet.Sdk.Service;
 using MySettingsReader;
 using Service.Service.SmsProviderMock.Settings;
 
-namespace Service.Service.SmsProviderMock
+namespace Service.SmsProviderMock
 {
     public class Program
     {
@@ -32,7 +32,7 @@ namespace Service.Service.SmsProviderMock
 
         public static void Main(string[] args)
         {
-            Console.Title = "MyJetWallet.Service.SmsProviderMock";
+            Console.Title = "MyJetWallet Service.SmsProviderMock";
 
             Settings = SettingsReader.GetSettings<SettingsModel>(SettingsFileName);
 

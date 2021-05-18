@@ -1,7 +1,7 @@
 ﻿using System;
 using NUnit.Framework;
 
-namespace Service.Service.SmsProviderMock.Tests
+namespace Service.SmsProviderMock.Tests
 {
     public class TestExample
     {

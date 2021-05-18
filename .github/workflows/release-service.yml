@@ -31,7 +31,7 @@ jobs:
       run: ls
 
     - name: Publish Service
-      run: dotnet publish ./src/Service.Service.SmsProviderMock/Service.Service.SmsProviderMock.csproj --configuration Release /p:AssemblyVersion=${GITHUB_REF#refs/tags/} --output ./publish-api
+      run: dotnet publish ./src/Service.SmsProviderMock/Service.SmsProviderMock.csproj --configuration Release /p:AssemblyVersion=${GITHUB_REF#refs/tags/} --output ./publish-api
 
     - name: Check Service dir
       run: ls ./publish-api
@@ -48,7 +48,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
         path: ./publish-api
         registry: docker.pkg.github.com
-        repository: ${{ secrets.ORG_NAME }}/service.service.smsprovidermock/myjetwallet.service.service.smsprovidermock
+        repository: ${{ secrets.ORG_NAME }}/service.smsprovidermock/myjetwallet.service.smsprovidermock
         tag_with_ref: true
-        build_args: app_version=myjetwallet.service.service.smsprovidermock:${{ steps.extract_branch.outputs.branch }},app_compilation_date=${{ steps.current-time.outputs.formattedTime }}
+        build_args: app_version=myjetwallet.service.smsprovidermock:${{ steps.extract_branch.outputs.branch }},app_compilation_date=${{ steps.current-time.outputs.formattedTime }}
 

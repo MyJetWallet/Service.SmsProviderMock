@@ -2,7 +2,7 @@
 using Autofac.Core;
 using Autofac.Core.Registration;
 
-namespace Service.Service.SmsProviderMock.Modules
+namespace Service.SmsProviderMock.Modules
 {
     public class ServiceModule: Module
     {

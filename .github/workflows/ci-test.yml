@@ -38,7 +38,7 @@ jobs:
       run: ls
 
     - name: Publish Service
-      run: dotnet publish --no-build ./src/Service.Service.SmsProviderMock/Service.Service.SmsProviderMock.csproj --configuration Release --output ./publish-api
+      run: dotnet publish --no-build ./src/Service.SmsProviderMock/Service.SmsProviderMock.csproj --configuration Release --output ./publish-api
 
     - name: Check Service dir
       run: ls ./publish-api
@@ -50,7 +50,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
         path: ./publish-api
         registry: docker.pkg.github.com
-        repository: ${{ secrets.ORG_NAME }}/service.service.smsprovidermock/myjetwallet.service.service.smsprovidermock-test
+        repository: ${{ secrets.ORG_NAME }}/service.smsprovidermock/myjetwallet.service.smsprovidermock-test
         tags: latest
-        build_args: app_version=myjetwallet.service.service.smsprovidermock-test:latest,app_compilation_date=${{ steps.current-time.outputs.formattedTime }}
+        build_args: app_version=myjetwallet.service.smsprovidermock-test:latest,app_compilation_date=${{ steps.current-time.outputs.formattedTime }}
 

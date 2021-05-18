@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Service.Service.SmsProviderMock.Client\Service.Service.SmsProviderMock.Client.csproj" />
-    <ProjectReference Include="..\..\src\Service.Service.SmsProviderMock.Grpc\Service.Service.SmsProviderMock.Grpc.csproj" />
+    <ProjectReference Include="..\..\src\Service.SmsProviderMock.Client\Service.SmsProviderMock.Client.csproj" />
+    <ProjectReference Include="..\..\src\Service.SmsProviderMock.Grpc\Service.SmsProviderMock.Grpc.csproj" />
   </ItemGroup>
 
 </Project>

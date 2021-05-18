@@ -1,6 +1,6 @@
 ﻿using Autofac;
 
-namespace Service.Service.SmsProviderMock.Modules
+namespace Service.SmsProviderMock.Modules
 {
     public class SettingsModule : Module
     {

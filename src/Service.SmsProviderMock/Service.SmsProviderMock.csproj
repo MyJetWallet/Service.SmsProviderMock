@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <UserSecretsId>b59e0841-2122-4636-b047-0a157f97e24a</UserSecretsId>
+    <UserSecretsId>36de5164-1483-4d34-9de3-0e7d7a3a9042</UserSecretsId>
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Service.Service.SmsProviderMock.Grpc\Service.Service.SmsProviderMock.Grpc.csproj" />
+    <ProjectReference Include="..\Service.SmsProviderMock.Grpc\Service.SmsProviderMock.Grpc.csproj" />
   </ItemGroup>
 
   <ItemGroup>

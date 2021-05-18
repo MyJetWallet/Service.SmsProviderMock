@@ -1,7 +1,7 @@
 using System.Runtime.Serialization;
-using Service.Service.SmsProviderMock.Domain.Models;
+using Service.SmsProviderMock.Domain.Models;
 
-namespace Service.Service.SmsProviderMock.Grpc.Models
+namespace Service.SmsProviderMock.Grpc.Models
 {
     [DataContract]
     public class HelloMessage : IHelloMessage

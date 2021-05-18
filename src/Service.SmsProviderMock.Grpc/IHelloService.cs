@@ -1,8 +1,8 @@
 using System.ServiceModel;
 using System.Threading.Tasks;
-using Service.Service.SmsProviderMock.Grpc.Models;
+using Service.SmsProviderMock.Grpc.Models;
 
-namespace Service.Service.SmsProviderMock.Grpc
+namespace Service.SmsProviderMock.Grpc
 {
     [ServiceContract]
     public interface IHelloService

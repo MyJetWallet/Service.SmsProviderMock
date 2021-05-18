@@ -1,11 +1,9 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
-using Service.Service.SmsProviderMock.Grpc;
-using Service.Service.SmsProviderMock.Grpc.Models;
-using Service.Service.SmsProviderMock.Settings;
+using Service.SmsProviderMock.Grpc;
+using Service.SmsProviderMock.Grpc.Models;
 
-namespace Service.Service.SmsProviderMock.Services
+namespace Service.SmsProviderMock.Services
 {
     public class HelloService: IHelloService
     {

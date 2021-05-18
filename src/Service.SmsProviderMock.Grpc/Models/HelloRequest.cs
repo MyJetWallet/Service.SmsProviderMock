@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace Service.Service.SmsProviderMock.Grpc.Models
+namespace Service.SmsProviderMock.Grpc.Models
 {
     [DataContract]
     public class HelloRequest

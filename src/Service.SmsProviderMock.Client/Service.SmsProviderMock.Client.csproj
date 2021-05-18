@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference PrivateAssets="All" Include="..\Service.Service.SmsProviderMock.Domain.Models\Service.Service.SmsProviderMock.Domain.Models.csproj" />
-    <ProjectReference PrivateAssets="All" Include="..\Service.Service.SmsProviderMock.Grpc\Service.Service.SmsProviderMock.Grpc.csproj" />
+    <ProjectReference PrivateAssets="All" Include="..\Service.SmsProviderMock.Domain.Models\Service.SmsProviderMock.Domain.Models.csproj" />
+    <ProjectReference PrivateAssets="All" Include="..\Service.SmsProviderMock.Grpc\Service.SmsProviderMock.Grpc.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,12 +23,12 @@
     <TargetsForTfmSpecificBuildOutput>
       $(TargetsForTfmSpecificBuildOutput);PackReferencedProjectOutputs
     </TargetsForTfmSpecificBuildOutput>
-    <PackageId>MyJetWallet.Service.Service.SmsProviderMock.Client</PackageId>
+    <PackageId>MyJetWallet.Service.SmsProviderMock.Client</PackageId>
     <Authors>MyJetWallet</Authors>
     <Company>MyJetWallet</Company>
     <Product>MyJetWallet</Product>
-    <PackageProjectUrl>https://github.com/MyJetWallet/Service.Service.SmsProviderMock</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/MyJetWallet/Service.Service.SmsProviderMock</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/MyJetWallet/Service.SmsProviderMock</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MyJetWallet/Service.SmsProviderMock</RepositoryUrl>
   </PropertyGroup>
 
   <Target Name="PackReferencedProjectOutputs" DependsOnTargets="BuildOnlySettings;ResolveReferences">

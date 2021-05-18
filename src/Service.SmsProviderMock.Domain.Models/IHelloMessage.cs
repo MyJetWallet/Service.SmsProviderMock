@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Service.Service.SmsProviderMock.Domain.Models
+namespace Service.SmsProviderMock.Domain.Models
 {
     public interface IHelloMessage
     {

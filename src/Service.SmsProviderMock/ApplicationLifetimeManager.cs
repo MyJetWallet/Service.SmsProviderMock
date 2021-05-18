@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Logging;
 using MyJetWallet.Sdk.Service;
 
-namespace Service.Service.SmsProviderMock
+namespace Service.SmsProviderMock
 {
     public class ApplicationLifetimeManager : ApplicationLifetimeManagerBase
     {
