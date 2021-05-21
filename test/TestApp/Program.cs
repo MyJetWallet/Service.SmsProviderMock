@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using ProtoBuf.Grpc.Client;
 using Service.SmsProviderMock.Client;
-using Service.SmsProviderMock.Grpc.Models;
+using Service.SmsSender.Grpc.Models.Requests;
 
 namespace TestApp
 {
@@ -15,12 +15,16 @@ namespace TestApp
             Console.Write("Press enter to start");
             Console.ReadLine();
 
-
             var factory = new SmsProviderMockClientFactory("http://localhost:5001");
-            var client = factory.GetHelloService();
+            var client = factory.GetSmsDeliveryService();
 
-            var resp = await  client.SayHelloAsync(new HelloRequest(){Name = "Alex"});
-            Console.WriteLine(resp?.Message);
+            var resp = await  client.SendSmsAsync(new SendSmsRequest
+            {
+                Phone = "+380973425312",
+                Body = "Successful log in from IP 127.0.0.1"
+            });
+
+            Console.WriteLine(resp?.Status);
 
             Console.WriteLine("End");
             Console.ReadLine();

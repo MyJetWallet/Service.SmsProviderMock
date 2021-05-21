@@ -8,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using MyJetWallet.Sdk.Service;
 using MySettingsReader;
-using Service.Service.SmsProviderMock.Settings;
+using Service.SmsProviderMock.Settings;
 
 namespace Service.SmsProviderMock
 {

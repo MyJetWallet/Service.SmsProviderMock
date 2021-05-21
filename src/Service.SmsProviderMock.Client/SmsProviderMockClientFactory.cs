@@ -5,7 +5,7 @@ using Grpc.Net.Client;
 using JetBrains.Annotations;
 using MyJetWallet.Sdk.GrpcMetrics;
 using ProtoBuf.Grpc.Client;
-using Service.SmsProviderMock.Grpc;
+using Service.SmsSender.Grpc;
 
 namespace Service.SmsProviderMock.Client
 {
@@ -14,13 +14,13 @@ namespace Service.SmsProviderMock.Client
     {
         private readonly CallInvoker _channel;
 
-        public SmsProviderMockClientFactory(string assetsDictionaryGrpcServiceUrl)
+        public SmsProviderMockClientFactory(string grpcServiceUrl)
         {
             AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
-            var channel = GrpcChannel.ForAddress(assetsDictionaryGrpcServiceUrl);
+            var channel = GrpcChannel.ForAddress(grpcServiceUrl);
             _channel = channel.Intercept(new PrometheusMetricsInterceptor());
         }
 
-        public IHelloService GetHelloService() => _channel.CreateGrpcService<IHelloService>();
+        public ISmsDeliveryService GetSmsDeliveryService() => _channel.CreateGrpcService<ISmsDeliveryService>();
     }
 }

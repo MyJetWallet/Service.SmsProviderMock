@@ -19,6 +19,12 @@
     <PackageReference Include="protobuf-net.Grpc" Version="1.0.152" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Service.SmsSender.Grpc">
+      <HintPath>..\..\..\Service.SmsSender\src\Service.SmsSender.Grpc\bin\Debug\netstandard2.1\Service.SmsSender.Grpc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetsForTfmSpecificBuildOutput>
       $(TargetsForTfmSpecificBuildOutput);PackReferencedProjectOutputs

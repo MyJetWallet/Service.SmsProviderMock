@@ -1,7 +1,7 @@
 ﻿using MyJetWallet.Sdk.Service;
 using MyYamlParser;
 
-namespace Service.Service.SmsProviderMock.Settings
+namespace Service.SmsProviderMock.Settings
 {
     public class SettingsModel
     {

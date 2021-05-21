@@ -10,9 +10,9 @@ using MyJetWallet.Sdk.GrpcSchema;
 using MyJetWallet.Sdk.Service;
 using Prometheus;
 using ProtoBuf.Grpc.Server;
-using Service.SmsProviderMock.Grpc;
 using Service.SmsProviderMock.Modules;
 using Service.SmsProviderMock.Services;
+using Service.SmsSender.Grpc;
 using SimpleTrading.BaseMetrics;
 using SimpleTrading.ServiceStatusReporterConnector;
 
@@ -50,7 +50,7 @@ namespace Service.SmsProviderMock
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcSchema<HelloService, IHelloService>();
+                endpoints.MapGrpcSchema<SmsDeliveryService, ISmsDeliveryService>();
 
                 endpoints.MapGrpcSchemaRegistry();
 

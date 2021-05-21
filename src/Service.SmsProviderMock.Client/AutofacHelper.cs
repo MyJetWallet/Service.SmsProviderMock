@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using Service.SmsProviderMock.Grpc;
+using Service.SmsSender.Grpc;
 
 // ReSharper disable UnusedMember.Global
 
@@ -11,7 +11,7 @@ namespace Service.SmsProviderMock.Client
         {
             var factory = new SmsProviderMockClientFactory(grpcServiceUrl);
 
-            builder.RegisterInstance(factory.GetHelloService()).As<IHelloService>().SingleInstance();
+            builder.RegisterInstance(factory.GetSmsDeliveryService()).As<ISmsDeliveryService>().SingleInstance();
         }
     }
 }

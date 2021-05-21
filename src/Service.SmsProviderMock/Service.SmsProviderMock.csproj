@@ -4,6 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>36de5164-1483-4d34-9de3-0e7d7a3a9042</UserSecretsId>
     <LangVersion>8.0</LangVersion>
+    <Version>1.0.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,12 +20,18 @@
     <PackageReference Include="prometheus-net.AspNetCore" Version="4.1.1" />
     <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.0.152" />
     <PackageReference Include="SimpleTrading.BaseMetrics" Version="1.0.3" />
-    <PackageReference Include="SimpleTrading.ServiceStatusReporterConnector" Version="1.0.8" />
+    <PackageReference Include="SimpleTrading.ServiceStatusReporterConnector" Version="1.0.7" />
     <PackageReference Include="MySettingsReader" Version="1.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Service.SmsProviderMock.Grpc\Service.SmsProviderMock.Grpc.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Service.SmsSender.Grpc">
+      <HintPath>..\..\..\Service.SmsSender\src\Service.SmsSender.Grpc\bin\Debug\netstandard2.1\Service.SmsSender.Grpc.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

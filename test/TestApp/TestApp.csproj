@@ -15,4 +15,10 @@
     <ProjectReference Include="..\..\src\Service.SmsProviderMock.Grpc\Service.SmsProviderMock.Grpc.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Service.SmsSender.Grpc">
+      <HintPath>..\..\..\Service.SmsSender\src\Service.SmsSender.Grpc\bin\Debug\netstandard2.1\Service.SmsSender.Grpc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
