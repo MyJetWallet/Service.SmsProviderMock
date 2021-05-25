@@ -5,6 +5,7 @@ using Grpc.Net.Client;
 using JetBrains.Annotations;
 using MyJetWallet.Sdk.GrpcMetrics;
 using ProtoBuf.Grpc.Client;
+using Service.SmsProviderMock.Grpc;
 using Service.SmsSender.Grpc;
 
 namespace Service.SmsProviderMock.Client
@@ -20,6 +21,8 @@ namespace Service.SmsProviderMock.Client
             var channel = GrpcChannel.ForAddress(grpcServiceUrl);
             _channel = channel.Intercept(new PrometheusMetricsInterceptor());
         }
+
+        public ISmsSentHistoryService GetSmsSentHistoryService() => _channel.CreateGrpcService<ISmsSentHistoryService>();
 
         public ISmsDeliveryService GetSmsDeliveryService() => _channel.CreateGrpcService<ISmsDeliveryService>();
     }
