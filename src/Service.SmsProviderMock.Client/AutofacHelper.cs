@@ -13,7 +13,7 @@ namespace Service.SmsProviderMock.Client
             var factory = new SmsProviderMockClientFactory(grpcServiceUrl);
 
             builder.RegisterInstance(factory.GetSmsSentHistoryService()).As<ISmsSentHistoryService>().SingleInstance();
-            builder.RegisterInstance(factory.GetSmsDeliveryService()).As<ISmsProviderService>().SingleInstance();
+            builder.RegisterInstance(factory.GetSmsDeliveryService()).As<ISmsDeliveryService>().SingleInstance();
         }
     }
 }
