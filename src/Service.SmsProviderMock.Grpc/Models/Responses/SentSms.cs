@@ -17,6 +17,6 @@ namespace Service.SmsProviderMock.Grpc.Models.Responses
 
         [DataMember(Order = 5)] public string Text { get; set; }
 
-        [DataMember(Order = 6)] public DateTime Date { get; set; }
+        [DataMember(Order = 6)] public long Date { get; set; }
     }
 }

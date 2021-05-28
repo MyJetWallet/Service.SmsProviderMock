@@ -12,7 +12,7 @@ namespace Service.SmsProviderMock.Services
 {
     public class SmsSentHistoryService : ISmsSentHistoryService
     {
-        private readonly SortedDictionary<DateTime, SentSms> _smsSentHistory = new SortedDictionary<DateTime, SentSms>();
+        private readonly SortedDictionary<long, SentSms> _smsSentHistory = new SortedDictionary<long, SentSms>();
 
         public Task<LastSentSmsResponse> GetLastSentSmsAsync(GetLastSentSmsRequest request)
         {
