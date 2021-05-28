@@ -10,6 +10,7 @@ using MyJetWallet.Sdk.GrpcSchema;
 using MyJetWallet.Sdk.Service;
 using Prometheus;
 using ProtoBuf.Grpc.Server;
+using Service.SmsProviderMock.Grpc;
 using Service.SmsProviderMock.Modules;
 using Service.SmsProviderMock.Services;
 using Service.SmsSender.Grpc;
@@ -51,6 +52,7 @@ namespace Service.SmsProviderMock
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcSchema<SmsDeliveryService, ISmsDeliveryService>();
+                endpoints.MapGrpcSchema<SmsSentHistoryService, ISmsSentHistoryService>();
 
                 endpoints.MapGrpcSchemaRegistry();
 
