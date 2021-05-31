@@ -9,9 +9,9 @@ namespace Service.SmsProviderMock.Services
     {
         private readonly List<SentSms> _smsSentHistory = new List<SentSms>();
 
-        public SentSms[] GetLastSentSmsAsync(int count) => _smsSentHistory.TakeLast(count).ToArray();
+        public SentSms[] GetLastSentSms(int count) => _smsSentHistory.TakeLast(count).ToArray();
 
-        public void StoreSentSmsAsync(SentSms sentSms)
+        public void StoreSentSms(SentSms sentSms)
         {
             try
             {

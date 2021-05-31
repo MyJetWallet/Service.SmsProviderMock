@@ -4,8 +4,8 @@ namespace Service.SmsProviderMock.Services
 {
     public interface ISmsSentStore
     {
-        SentSms[] GetLastSentSmsAsync(int count);
+        SentSms[] GetLastSentSms(int count);
 
-        void StoreSentSmsAsync(SentSms sentSms);
+        void StoreSentSms(SentSms sentSms);
     }
 }

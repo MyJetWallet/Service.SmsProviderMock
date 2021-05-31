@@ -17,19 +17,19 @@ namespace Service.SmsProviderMock.Services
             _smsSentStore = smsSentStore;
         }
 
-        public Task<LastSentSmsResponse> GetLastSentSmsAsync(GetLastSentSmsRequest request)
+        public LastSentSmsResponse GetLastSentSms(GetLastSentSmsRequest request)
         {
-            return Task.FromResult(new LastSentSmsResponse
+            return new LastSentSmsResponse
             {
-                SentSmsList = _smsSentStore.GetLastSentSmsAsync(request.MaxCount)
-            });
+                SentSmsList = _smsSentStore.GetLastSentSms(request.MaxCount)
+            };
         }
 
         public Task<SendResponse> StoreSentSmsAsync(StoreSentSmsRequest request)
         {
             try
             {
-                _smsSentStore.StoreSentSmsAsync(request.SentSms);
+                _smsSentStore.StoreSentSms(request.SentSms);
                 return Task.FromResult(new SendResponse { Result = SmsSendResult.OK });
             }
             catch (Exception)
