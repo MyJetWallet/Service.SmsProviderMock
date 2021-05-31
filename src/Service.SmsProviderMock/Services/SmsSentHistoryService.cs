@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Service.SmsProviderMock.Grpc;
 using Service.SmsProviderMock.Grpc.Models.Requests;
@@ -12,16 +10,18 @@ namespace Service.SmsProviderMock.Services
 {
     public class SmsSentHistoryService : ISmsSentHistoryService
     {
-        private readonly SortedDictionary<long, SentSms> _smsSentHistory = new SortedDictionary<long, SentSms>();
+        private readonly ISmsSentStore _smsSentStore;
+
+        public SmsSentHistoryService(ISmsSentStore smsSentStore)
+        {
+            _smsSentStore = smsSentStore;
+        }
 
         public Task<LastSentSmsResponse> GetLastSentSmsAsync(GetLastSentSmsRequest request)
         {
             return Task.FromResult(new LastSentSmsResponse
             {
-                SentSmsList = _smsSentHistory
-                    .Take(request.MaxCount)
-                    .Select(h => h.Value)
-                    .ToArray()
+                SentSmsList = _smsSentStore.GetLastSentSmsAsync(request.MaxCount)
             });
         }
 
@@ -29,7 +29,7 @@ namespace Service.SmsProviderMock.Services
         {
             try
             {
-                _smsSentHistory.Add(request.SentSms.Date, request.SentSms);
+                _smsSentStore.StoreSentSmsAsync(request.SentSms);
                 return Task.FromResult(new SendResponse { Result = SmsSendResult.OK });
             }
             catch (Exception)
