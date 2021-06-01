@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using DotNetCoreDecorators;
 using Microsoft.Extensions.Logging;
-using Service.SmsProviderMock.Extensions;
 using Service.SmsProviderMock.Grpc.Models.Responses;
 using Service.SmsSender.Grpc;
 using Service.SmsSender.Grpc.Models.Requests;
@@ -26,7 +26,7 @@ namespace Service.SmsProviderMock.Services
             {
                 Phone = request.Phone,
                 Text = request.Body,
-                Date = DateTime.Now.ToTimestamp()
+                Date = DateTime.Now.UnixTime()
             });
 
             var smsId = Guid.NewGuid().ToString();

@@ -1,7 +1,5 @@
 ﻿using Autofac;
-using Service.SmsProviderMock.Grpc;
 using Service.SmsProviderMock.Services;
-using Service.SmsSender.Grpc;
 
 namespace Service.SmsProviderMock.Modules
 {
@@ -12,20 +10,17 @@ namespace Service.SmsProviderMock.Modules
             builder
                 .RegisterType<SmsSentStore>()
                 .As<ISmsSentStore>()
-                .AutoActivate()
                 .SingleInstance();
 
+            //for debug
             builder
                 .RegisterType<SmsDeliveryService>()
-                .As<ISmsDeliveryService>()
-                .AutoActivate()
-                .SingleInstance();
+                .AutoActivate();
 
+            //for debug
             builder
                 .RegisterType<SmsSentHistoryService>()
-                .As<ISmsSentHistoryService>()
-                .AutoActivate()
-                .SingleInstance();
+                .AutoActivate();
         }
     }
 }
