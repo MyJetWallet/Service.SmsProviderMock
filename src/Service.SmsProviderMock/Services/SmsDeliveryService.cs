@@ -29,11 +29,9 @@ namespace Service.SmsProviderMock.Services
                 Date = DateTime.Now.UnixTime()
             });
 
-            var smsId = Guid.NewGuid().ToString();
+            _logger.LogInformation("Sms send is successful");
 
-            _logger.LogInformation("Sms with fake ID {smsId} send emulation is successful.", smsId);
-
-            return Task.FromResult(new SendSmsResponse { Status = true, ReturnedId = smsId });
+            return Task.FromResult(new SendSmsResponse { Status = true });
         }
     }
 }
